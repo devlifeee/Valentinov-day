@@ -1,7 +1,7 @@
 {
   "name": "lina-vanya-love",
   "version": "0.1.0",
-  "homepage": "https://github.com/devlifeee/Valentinov-day/",
+  "homepage": "https://devlifeee.github.io/Valentinov-day",
   "private": true,
   "dependencies": {
     "canvas-confetti": "^1.9.4",
