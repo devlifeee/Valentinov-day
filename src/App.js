@@ -205,7 +205,7 @@ function App() {
 
         <div className="video-block">
           <motion.p initial="hidden" whileInView="visible" variants={fadeInUp} viewport={{ once: true }}>
-            Наше первое свидание...
+            Смешные тренды)
           </motion.p>
           <motion.video 
             controls 
