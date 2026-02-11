@@ -1,44 +1,48 @@
-/* Подключаем красивый шрифт (опционально) */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #fff0f3; /* Нежно-розовый фон */
+  background-color: #fff0f3;
   font-family: 'Montserrat', sans-serif;
   color: #590d22;
   overflow-x: hidden;
 }
 
-/* --- HERO SECTION --- */
+/* Фоновые сердечки (переименовал класс, чтобы не путался) */
+.heart-bg {
+  pointer-events: none;
+}
+
+/* ГЛАВНЫЙ ЭКРАН */
 .hero-section {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* На весь экран */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  background-color: #000;
 }
 
 .hero-image {
   width: 100%;
-  height: auto;
-  min-height: 100vh;
-  object-fit: cover; /* Заполняет экран, обрезая лишнее по краям, но не растягивая */
+  height: 100%;
+  object-fit: cover;
   position: absolute;
-  z-index: 0;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
-/* Затемнение поверх фото, чтобы текст читался */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); 
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,106 +50,162 @@ body {
 
 .title {
   font-family: 'Pacifico', cursive;
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: white;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.6);
+  z-index: 3;
   text-align: center;
-  margin: 0;
   padding: 0 20px;
+  margin: 0;
 }
 
 .scroll-indicator {
   position: absolute;
-  bottom: 20px;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
-  z-index: 2;
-  font-size: 1rem;
-  animation: bounce 2s infinite;
+  z-index: 3;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-  40% {transform: translateY(-10px);}
-  60% {transform: translateY(-5px);}
-}
-
-/* --- GALLERY SECTION --- */
+/* ГАЛЕРЕЯ */
 .gallery-section {
-  padding: 50px 20px;
+  padding: 60px 15px;
+  max-width: 1100px;
+  margin: 0 auto;
   text-align: center;
 }
 
-h2 {
+.gallery-section h2 {
+  font-family: 'Pacifico', cursive;
   font-size: 2.5rem;
   margin-bottom: 40px;
-  font-family: 'Pacifico', cursive;
-  color: #800f2f;
+  color: #ff4d6d;
 }
 
 .photo-grid {
   display: grid;
   gap: 15px;
-  /* Для мобильных: 2 колонки */
   grid-template-columns: repeat(2, 1fr);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Медиа-запрос для ПК: 3 колонки */
-@media (min-width: 768px) {
-  .photo-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
-  .title {
-    font-size: 6rem;
-  }
 }
 
 .photo-card img {
   width: 100%;
-  height: 300px; /* Фиксированная высота для аккуратности */
+  height: 250px;
   object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-.photo-card img:hover {
-  transform: scale(1.02);
-}
-
-/* --- MEMORY / VIDEO SECTION --- */
+/* ВИДЕО ИСТОРИЯ */
 .memory-section {
-  padding: 50px 20px 100px;
+  padding: 40px 15px 100px;
   background: linear-gradient(to bottom, #fff0f3, #ffccd5);
   text-align: center;
+  overflow: hidden; /* Чтобы конфетти не растягивало страницу */
 }
 
 .memory-title {
-  margin-bottom: 60px;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #c9184a;
 }
 
 .video-block {
-  max-width: 800px;
-  margin: 0 auto 60px;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .video-block p {
-  font-size: 1.5rem;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.4rem;
   margin-bottom: 20px;
-  font-weight: bold;
+  color: #c9184a;
 }
 
 .styled-video {
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(128, 15, 47, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background-color: #000;
+}
+
+/* --- БЛОК СЮРПРИЗА --- */
+.surprise-container {
+  margin: 80px 0;
+}
+
+.surprise-text {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #a4133c;
+  font-weight: bold;
+}
+
+.surprise-button {
+  background: linear-gradient(45deg, #ff4d6d, #ff758f);
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 50px;
+  font-family: 'Pacifico', cursive;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(255, 77, 109, 0.4);
+  outline: none;
 }
 
 .footer-love {
-  font-size: 2rem;
-  margin-top: 50px;
-  color: #c9184a;
   font-family: 'Pacifico', cursive;
+  font-size: 2.2rem;
+  margin-top: 60px;
+  color: #ff4d6d;
+}
+
+/* АДАПТИВНОСТЬ ДЛЯ ПК */
+@media (min-width: 768px) {
+  .title { font-size: 6rem; }
+  .photo-grid { grid-template-columns: repeat(3, 1fr); gap: 25px; }
+  .photo-card img { height: 350px; }
+}
+
+.valentine-greeting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-height: 200px;
+}
+
+.congrats-text {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: #ff4d6d;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(255, 77, 109, 0.3);
+}
+
+
+@media (min-width: 768px) {
+  .congrats-text {
+    font-size: 4.5rem;
+  }
+}
+
+.surprise-container {
+  min-height: 300px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

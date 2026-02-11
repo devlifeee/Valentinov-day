@@ -1,9 +1,10 @@
 {
   "name": "lina-vanya-love",
   "version": "0.1.0",
-  "homepage": "https://твой-ник.github.io/lina-vanya-love",
+  "homepage": "https://github.com/devlifeee/Valentinov-day/",
   "private": true,
   "dependencies": {
+    "canvas-confetti": "^1.9.4",
     "framer-motion": "^11.18.2",
     "gh-pages": "^6.1.1",
     "react": "^18.2.0",
