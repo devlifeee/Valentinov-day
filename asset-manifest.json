@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/devlifeee/Valentinov-day/static/css/main.8572d94e.css",
+    "main.js": "/devlifeee/Valentinov-day/static/js/main.e4d18cfd.js",
+    "index.html": "/devlifeee/Valentinov-day/index.html",
+    "main.8572d94e.css.map": "/devlifeee/Valentinov-day/static/css/main.8572d94e.css.map",
+    "main.e4d18cfd.js.map": "/devlifeee/Valentinov-day/static/js/main.e4d18cfd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8572d94e.css",
+    "static/js/main.e4d18cfd.js"
+  ]
+}
